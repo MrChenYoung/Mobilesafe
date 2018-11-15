@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:mobilesafe="http://schemas.android.com/apk/settingItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    tools:context=".activity.SettingActivity"
+    android:orientation="vertical">
+    <!--标题-->
+    <TextView
+        style="@style/titleStyle"
+        android:text="设置中心"/>
+
+    <com.mobilesafe.view.SettingItemView
+        mobilesafe:title="自动更新设置"
+        mobilesafe:desoff="自动更新已关闭"
+        mobilesafe:deson="自动更新已开启"
+        android:id="@+id/view_update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <com.mobilesafe.view.SettingItemView
+        mobilesafe:title="归属地查询设置"
+        mobilesafe:desoff="归属地查询已关闭"
+        mobilesafe:deson="归属地查询已开启"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
