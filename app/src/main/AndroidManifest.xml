@@ -4,6 +4,10 @@
 
     <!-- 上网权限 -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 读取电话的权限 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!--读取手机通讯录权限-->
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
 
     <application
         android:allowBackup="true"
@@ -20,7 +24,19 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.HomeActivity" />
-        <activity android:name=".activity.SettingActivity"/>
+        <activity android:name=".activity.SettingActivity" />
+        <activity android:name=".activity.TestActivity" />
+        <activity android:name=".activity.SetupOverActivity" />
+        <activity android:name=".activity.SetupStepOneActivity" />
+
+        <meta-data
+            android:name="com.google.android.actions"
+            android:resource="@xml/setup_btn_bg" />
+
+        <activity android:name=".activity.SetupStepTwoActivity" />
+        <activity android:name=".activity.SetupStepThreeActivity" />
+        <activity android:name=".activity.SetupStepFourActivity" />
+        <activity android:name=".activity.ContactsActivity"/>
     </application>
 
 </manifest>

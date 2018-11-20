@@ -26,7 +26,7 @@ public class SettingActivity extends AppCompatActivity {
     private void initUpdate(){
         final SettingItemView view = findViewById(R.id.view_update);
         // 设置更新状态
-        boolean open_update = SpUtil.getBoolean(this,ConstantValue.OPEN_UPDATE_KEY,false);
+        boolean open_update = SpUtil.getBoolean(this,ConstantValue.MOBILE_OPEN_UPDATE_KEY,false);
         view.setChecked(open_update);
 
         // 设置条目点击事件
@@ -37,7 +37,7 @@ public class SettingActivity extends AppCompatActivity {
                 view.setChecked(!cheched);
 
                 // 保存设置的更新版本状态
-                SpUtil.putBoolean(getApplicationContext(),ConstantValue.OPEN_UPDATE_KEY,!cheched);
+                SpUtil.putBoolean(getApplicationContext(),ConstantValue.MOBILE_OPEN_UPDATE_KEY,!cheched);
             }
         });
     }

@@ -10,10 +10,7 @@ import android.os.SystemClock;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.StaticLayout;
-import android.util.Log;
 import android.view.View;
-import android.view.ViewTreeObserver;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.ProgressBar;
@@ -26,7 +23,6 @@ import com.mobilesafe.util.ConstantValue;
 import com.mobilesafe.util.SpUtil;
 
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 public class SplashActivity extends AppCompatActivity {
@@ -54,7 +50,7 @@ public class SplashActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progress);
 
         // 检测版本
-        if (SpUtil.getBoolean(this,ConstantValue.OPEN_UPDATE_KEY,false)){
+        if (SpUtil.getBoolean(this,ConstantValue.MOBILE_OPEN_UPDATE_KEY,false)){
             // 开启了自动更新，版本对比
             progressBar.setVisibility(View.VISIBLE);
             detectorVersion();
