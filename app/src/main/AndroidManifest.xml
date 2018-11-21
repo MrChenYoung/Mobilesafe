@@ -8,6 +8,12 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <!--读取手机通讯录权限-->
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <!--手机开机权限-->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <!--发送短信权限-->
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <!--接受短信权限-->
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
 
     <application
         android:allowBackup="true"
@@ -37,6 +43,18 @@
         <activity android:name=".activity.SetupStepThreeActivity" />
         <activity android:name=".activity.SetupStepFourActivity" />
         <activity android:name=".activity.ContactsActivity"/>
+
+        <receiver android:name=".receiver.BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".receiver.SmsReceiver">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
