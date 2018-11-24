@@ -7,6 +7,7 @@ import android.media.MediaPlayer;
 import android.telephony.SmsMessage;
 
 import com.mobilesafe.R;
+import com.mobilesafe.service.LocationService;
 import com.mobilesafe.util.ConstantValue;
 import com.mobilesafe.util.SpUtil;
 
@@ -29,6 +30,9 @@ public class SmsReceiver extends BroadcastReceiver {
                     MediaPlayer mediaPlayer = MediaPlayer.create(context, R.raw.ylzs);
                     mediaPlayer.setLooping(true);
                     mediaPlayer.start();
+                }else if (messageBody.contains("#*location*#")){
+                    Intent serverIntent = new Intent(context,LocationService.class);
+                    context.startService(serverIntent);
                 }
             }
         }
